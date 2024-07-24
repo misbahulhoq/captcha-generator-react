@@ -1,4 +1,4 @@
-const generateCaptcha = (length = 6, width = 100, height = 40) => {
+const generateCaptcha = (length = 6, width = 120, height = 40) => {
   const canvas = document.createElement("canvas");
   const ctx = canvas.getContext("2d");
 
