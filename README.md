@@ -17,8 +17,8 @@ npm install generate-captcha
 
 # Usage
 
-```bash
-import generateCaptcha from 'generate-captcha';
+```js
+import generateCaptcha from "generate-captcha";
 
 const { captchaText, captchaImage } = generateCaptcha();
 
@@ -28,5 +28,4 @@ console.log(captchaImage); // Base64-encoded PNG image
 // You can also customize the captcha length, width, and height:
 
 const { captchaText, captchaImage } = generateCaptcha(5, 150, 50);
-
 ```
