@@ -6,8 +6,18 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "captcha",
+    "canvas",
+    "captcha-generator",
+    "captcha-image",
+    "generate-captcha",
+    "browser-captcha",
+    "frontend",
+    "security",
+    "validation"
+  ],
+  "author": "Md Mezbah Uddin",
+  "license": "MIT",
   "description": ""
 }
