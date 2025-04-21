@@ -11,8 +11,16 @@ A lightweight utility to generate image-based captchas using the HTML5 Canvas AP
 
 ## 📦 Installation
 
+Using npm
+
 ```bash
-npm install generate-captcha
+npm install captcha-generator-react
+```
+
+Using pnpm
+
+```bash
+pnpm add captcha-generator-react
 ```
 
 # Usage
@@ -26,6 +34,5 @@ console.log(captchaText); // Example: "aZ4pQ2"
 console.log(captchaImage); // Base64-encoded PNG image
 
 // You can also customize the captcha length, width, and height:
-
 const { captchaText, captchaImage } = generateCaptcha(5, 150, 50);
 ```
