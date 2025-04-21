@@ -27,10 +27,6 @@ console.log(captchaImage); // Base64-encoded PNG image
 
 // You can also customize the captcha length, width, and height:
 
-js
-Copy
-Edit
-
 const { captchaText, captchaImage } = generateCaptcha(5, 150, 50);
 
 ```
