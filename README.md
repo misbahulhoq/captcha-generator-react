@@ -69,10 +69,9 @@ export default CaptchaGenerator;
 
 # Customize
 
+if you want to adjust the height, width or length of the captcha, just include it as an object in the generateCaptcha() function's parameter.
+
 ```js
-//if you want to adjust the height, width or length,just include it as an object in the generateCaptcha() function parameter.
-
 const { text, imgUrl } = generateCaptcha({ length: 4 }); // generates a captcha of 4 characters.
-
-// you can also add height and width as well.
+const { text, imgUrl } = generateCaptcha({ length: 7, height: 50, width: 220 }); // generates a captcha where the height is 50 pixels, width is 220 pixels and the length is 7.
 ```
