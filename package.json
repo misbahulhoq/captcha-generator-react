@@ -1,6 +1,6 @@
 {
   "name": "captcha-generator-react",
-  "version": "1.6.4",
+  "version": "1.6.5",
   "main": "index.mjs",
   "types": "index.d.ts",
   "scripts": {
