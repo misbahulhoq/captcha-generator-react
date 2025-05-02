@@ -25,7 +25,7 @@ const generateCaptcha = (options = {}) => {
   ctx.textBaseline = "middle";
   ctx.fillText(captchaText, 10, canvas.height / 2);
 
-  for (let i = 0; i < 5; i++) {
+  for (let i = 0; i < length - 1; i++) {
     ctx.strokeStyle = `rgba(0,0,0,${Math.random()})`;
     ctx.beginPath();
     ctx.moveTo(Math.random() * canvas.width, Math.random() * canvas.height);
