@@ -23,7 +23,7 @@ const generateCaptcha = (options = {}) => {
 
   ctx.fillStyle = "#000";
   ctx.textBaseline = "middle";
-  ctx.fillText(captchaText, 10, canvas.height / 2);
+  ctx.fillText(text, 10, canvas.height / 2);
 
   for (let i = 0; i < length - 1; i++) {
     ctx.strokeStyle = `rgba(0,0,0,${Math.random()})`;
