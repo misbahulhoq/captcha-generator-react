@@ -32,7 +32,7 @@ import { useEffect, useState } from "react";
 function CaptchaGenerator() {
   const [captcha, setCaptcha] = useState("");
   const [captchaText, setCaptchaText] = useState("");
-  const [captchaImage, setCaptchaImage] = (useState < null) | (string > null);
+  const [captchaImage, setCaptchaImage] = useState(null);
 
   useEffect(() => {
     const { text, imgUrl } = generateCaptcha();
