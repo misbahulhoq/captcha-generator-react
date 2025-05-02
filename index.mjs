@@ -1,11 +1,16 @@
-const generateCaptcha = ({ length = 6, width = 120, height = 40 }) => {
+const generateCaptcha = (options = {}) => {
+  const optionsWithDefaults = Object.assign(
+    { length: 6, width: 120, height: 40 },
+    options
+  );
+  const { length, width, height } = optionsWithDefaults;
   const canvas = document.createElement("canvas");
   const ctx = canvas.getContext("2d");
 
   const chars =
     "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
   const captchaText = Array.from(
-    { length: length },
+    { length },
     () => chars[Math.floor(Math.random() * chars.length)]
   ).join("");
 
