@@ -27,12 +27,52 @@ pnpm add captcha-generator-react
 
 ```js
 import generateCaptcha from "generate-captcha";
+import { useEffect, useState } from "react";
 
-const { captchaText, captchaImage } = generateCaptcha();
+function CaptchaGenerator() {
+  const [captcha, setCaptcha] = useState("");
+  const [captchaText, setCaptchaText] = useState("");
+  const [captchaImage, setCaptchaImage] = (useState < null) | (string > null);
 
-console.log(captchaText); // Example: "aZ4pQ2"
-console.log(captchaImage); // Base64-encoded PNG image
+  useEffect(() => {
+    const { text, imgUrl } = generateCaptcha();
+    setCaptchaText(text);
+    setCaptchaImage(imgUrl);
+  }, []);
 
-// You can also customize the captcha length, width, and height:
-const { captchaText, captchaImage } = generateCaptcha(5, 150, 50);
+  return (
+    <>
+      <img src={captchaImage || undefined} alt="" className="mb" />
+
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          console.log();
+          console.log(captchaText === captcha);
+        }}
+      >
+        <input
+          type="text"
+          name="captcha"
+          onChange={(e) => {
+            setCaptcha(e.target.value);
+          }}
+        />
+        <button>Submit</button>
+      </form>
+    </>
+  );
+}
+
+export default CaptchaGenerator;
+```
+
+# Customize
+
+```js
+//if you want to adjust the height, width or length,just include it as an object in the generateCaptcha() function parameter.
+
+const { text, imgUrl } = generateCaptcha({ length: 4 }); // generates a captcha of 4 characters.
+
+// you can also add height and width as well.
 ```
