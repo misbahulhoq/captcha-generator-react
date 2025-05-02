@@ -1,5 +1,5 @@
 declare module "captcha-generator-react" {
-  export function generateCaptcha(options?: {
+  function generateCaptcha(options?: {
     length?: number;
     width?: number;
     height?: number;
@@ -7,4 +7,6 @@ declare module "captcha-generator-react" {
     captchaText: string;
     captchaImage: string;
   };
+  export { generateCaptcha };
+  export default generateCaptcha;
 }
