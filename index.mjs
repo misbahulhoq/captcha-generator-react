@@ -31,4 +31,6 @@ const generateCaptcha = (length = 6, width = 120, height = 40) => {
   return { captchaText, captchaImage: canvas.toDataURL() };
 };
 
+export { generateCaptcha };
+
 export default generateCaptcha;
