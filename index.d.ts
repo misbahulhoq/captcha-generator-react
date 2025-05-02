@@ -4,8 +4,8 @@ declare module "captcha-generator-react" {
     width?: number;
     height?: number;
   }): {
-    captchaText: string;
-    captchaImage: string;
+    text: string;
+    imgUrl: string;
   };
   export { generateCaptcha };
   export default generateCaptcha;

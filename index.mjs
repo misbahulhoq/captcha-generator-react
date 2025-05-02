@@ -9,7 +9,7 @@ const generateCaptcha = (options = {}) => {
 
   const chars =
     "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-  const captchaText = Array.from(
+  const text = Array.from(
     { length },
     () => chars[Math.floor(Math.random() * chars.length)]
   ).join("");
@@ -33,7 +33,7 @@ const generateCaptcha = (options = {}) => {
     ctx.stroke();
   }
 
-  return { captchaText, captchaImage: canvas.toDataURL() };
+  return { text, imgUrl: canvas.toDataURL() };
 };
 
 export { generateCaptcha };
