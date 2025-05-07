@@ -23,7 +23,7 @@ Using pnpm
 pnpm add captcha-generator-react
 ```
 
-# Usage
+# Usage in plain React.
 
 ```js
 import generateCaptcha from "generate-captcha";
@@ -47,8 +47,59 @@ function CaptchaGenerator() {
       <form
         onSubmit={(e) => {
           e.preventDefault();
-          console.log();
-          console.log(captchaText === captcha);
+          if (captchaText === captcha) {
+            alert("success");
+          } else {
+            alert("fail");
+          }
+        }}
+      >
+        <input
+          type="text"
+          name="captcha"
+          onChange={(e) => {
+            setCaptcha(e.target.value);
+          }}
+        />
+        <button>Submit</button>
+      </form>
+    </>
+  );
+}
+
+export default CaptchaGenerator;
+```
+
+# Usage in Nextjs server components (v13 and up).
+
+```js
+"use client";
+import generateCaptcha from "generate-captcha";
+import { useEffect, useState } from "react";
+
+function CaptchaGenerator() {
+  const [captcha, setCaptcha] = useState("");
+  const [captchaText, setCaptchaText] = useState("");
+  const [captchaImage, setCaptchaImage] = useState(null);
+
+  useEffect(() => {
+    const { text, imgUrl } = generateCaptcha();
+    setCaptchaText(text);
+    setCaptchaImage(imgUrl);
+  }, []);
+
+  return (
+    <>
+      <img src={captchaImage || undefined} alt="" className="mb" />
+
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          if (captchaText === captcha) {
+            alert("success");
+          } else {
+            alert("fail");
+          }
         }}
       >
         <input
